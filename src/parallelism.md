@@ -10,6 +10,6 @@ Rust มีการรองรับการเขียนโปรแกร
 [`crossbeam`]: https://crates.io/crates/crossbeam
 [Atomics]: https://marabos.nl/atomics/
 
-หากคุณสนใจการประมวลผลแบบขนานของข้อมูลระดับละเอียด [บทความบล็อกนี้][blog post]เป็นภาพรวมที่ดีของสถานะการรองรับ SIMD ใน Rust ณ เดือนพฤศจิกายน 2025
+หากคุณสนใจการประมวลผลแบบขนานของข้อมูลระดับละเอียด [บทความบล็อกนี้][blog post] เป็นภาพรวมที่ดีของสถานะการรองรับ SIMD ใน Rust ณ เดือนพฤศจิกายน 2025
 
 [blog post]: https://shnatsel.medium.com/the-state-of-simd-in-rust-in-2025-32c263e5f53d

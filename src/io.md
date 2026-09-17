@@ -81,7 +81,7 @@ out.flush()?;
 
 ## การอ่านไฟล์ทีละบรรทัด
 
-[ส่วนนี้]อธิบายวิธีหลีกเลี่ยงการจัดสรรหน่วยความจำมากเกินไปเมื่อใช้ [`BufRead`] อ่านไฟล์ทีละบรรทัด
+[ส่วนนี้] อธิบายวิธีหลีกเลี่ยงการจัดสรรหน่วยความจำมากเกินไปเมื่อใช้ [`BufRead`] อ่านไฟล์ทีละบรรทัด
 
 [ส่วนนี้]: heap-allocations.md#การอานไฟลทีละบรรทัด
 [`BufRead`]: https://doc.rust-lang.org/std/io/trait.BufRead.html
@@ -93,7 +93,7 @@ out.flush()?;
 [String]: https://doc.rust-lang.org/std/string/struct.String.html
 [`BufRead::read_until`]: https://doc.rust-lang.org/std/io/trait.BufRead.html#method.read_until
 
-ยังมีเครตเฉพาะทางสำหรับอ่าน[ข้อมูลทีละบรรทัดแบบไบต์][byte-oriented lines of data]และทำงานกับ[ไบต์สตริง][byte strings]
+ยังมีเครตเฉพาะทางสำหรับอ่าน[ข้อมูลทีละบรรทัดแบบไบต์][byte-oriented lines of data] และทำงานกับ[ไบต์สตริง][byte strings]
 
 [byte-oriented lines of data]: https://github.com/Freaky/rust-linereader
 [byte strings]: https://github.com/BurntSushi/bstr

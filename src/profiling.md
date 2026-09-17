@@ -5,7 +5,7 @@
 ## โปรไฟเลอร์
 
 มีโปรไฟเลอร์ให้เลือกใช้หลายชนิด แต่ละชนิดมีจุดแข็งและจุดอ่อนของตัวเอง ต่อไปนี้เป็นรายการโปรไฟเลอร์ที่ไม่ครบถ้วนสมบูรณ์ ซึ่งเคยถูกนำไปใช้กับโปรแกรม Rust ได้สำเร็จ
-- [perf] เป็นโปรไฟเลอร์เอนกประสงค์ที่ใช้ตัวนับประสิทธิภาพฮาร์ดแวร์ (hardware performance counter) [Hotspot] และ [Firefox Profiler] เหมาะสำหรับดูข้อมูลที่บันทึกโดย perf ทำงานบน Linux
+- [perf] เป็นโปรไฟเลอร์เอนกประสงค์ที่ใช้ตัวนับประสิทธิภาพฮาร์ดแวร์ (hardware performance counter) โดย [Hotspot] และ [Firefox Profiler] เหมาะสำหรับดูข้อมูลที่บันทึกโดย perf ทำงานบน Linux
 - [Instruments] เป็นโปรไฟเลอร์เอนกประสงค์ที่มาพร้อมกับ Xcode บน macOS
 - [Intel VTune Profiler] เป็นโปรไฟเลอร์เอนกประสงค์ ทำงานบน Windows, Linux และ macOS
 - [AMD μProf] เป็นโปรไฟเลอร์เอนกประสงค์ ทำงานบน Windows และ Linux
@@ -43,7 +43,7 @@
 [profile.release]
 debug = "line-tables-only"
 ```
-ดู[เอกสาร Cargo]สำหรับรายละเอียดเพิ่มเติมเกี่ยวกับการตั้งค่า `debug`
+ดู[เอกสาร Cargo] สำหรับรายละเอียดเพิ่มเติมเกี่ยวกับการตั้งค่า `debug`
 
 [เอกสาร Cargo]: https://doc.rust-lang.org/cargo/reference/profiles.html#debug
 
@@ -86,7 +86,7 @@ Rust ใช้การเข้ารหัสชื่อ (name mangling) ร�
 
 [`rustfilt`]: https://crates.io/crates/rustfilt
 
-หากคุณพบปัญหากับการถอดรหัสชื่อสัญลักษณ์ระหว่างการโปรไฟล์ การเปลี่ยน[รูปแบบการเข้ารหัสชื่อ][mangling format]จากรูปแบบ legacy เริ่มต้นเป็นรูปแบบ v0 ที่ใหม่กว่าอาจช่วยได้
+หากคุณพบปัญหากับการถอดรหัสชื่อสัญลักษณ์ระหว่างการโปรไฟล์ การเปลี่ยน[รูปแบบการเข้ารหัสชื่อ][mangling format] จากรูปแบบ legacy เริ่มต้นเป็นรูปแบบ v0 ที่ใหม่กว่าอาจช่วยได้
 
 [mangling format]: https://doc.rust-lang.org/rustc/codegen-options/index.html#symbol-mangling-version
 
