@@ -1,0 +1,18 @@
+[book]
+language = "th"
+title = "The Rust Performance Book (ฉบับภาษาไทย)"
+description = "เทคนิคการปรับปรุงประสิทธิภาพสำหรับโปรแกรม Rust"
+authors = ["Nicholas Nethercote"]
+src = "src"
+
+[build]
+create-missing = false
+
+[rust]
+edition = "2018"
+
+[output.html]
+smart-punctuation = true
+default-theme = "rust"
+git-repository-url = "https://github.com/suradet-ps/perf-th/tree/main/src"
+edit-url-template = "https://github.com/suradet-ps/perf-th/edit/main/src/{path}"
