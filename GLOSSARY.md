@@ -1,31 +1,33 @@
 # พจนานุกรมศัพท์ (Glossary) — The Rust Performance Book ฉบับภาษาไทย
 
-ตารางนี้รวบรวมคำศัพท์เชิงเทคนิคและแนวทางการแปลที่ใช้อย่างสม่ำเสมอตลอดทั้งเล่ม เพื่อให้การแปลทุกบทมีความถูกต้อง ลื่นไหล และเป็นธรรมชาติสำหรับนักพัฒนาซอฟต์แวร์ชาวไทย
+ตารางนี้รวบรวมคำศัพท์เชิงเทคนิคและแนวทางการแปลที่ใช้อย่างสม่ำเสมอตลอดทั้งเล่ม เพื่อให้การแปลทุกบทมีความถูกต้องทางเทคนิคเทียบเท่าต้นฉบับ อ่านลื่นไหล และเป็นธรรมชาติสำหรับนักพัฒนาซอฟต์แวร์ชาวไทย
 
 | ศัพท์ต้นฉบับ | คำแปลไทย | หมายเหตุ |
 |---|---|---|
 | performance | ประสิทธิภาพ (performance) | กล่าวถึงครั้งแรกด้วย "ประสิทธิภาพ (performance)" |
-| optimization | การเพิ่มประสิทธิภาพ / การปรับให้เหมาะสมที่สุด (optimization) | "optimize" ใช้ "เพิ่มประสิทธิภาพ" |
-| hot code / hot path | โค้ดฮอต / พาธฮอต (hot code / hot path) | ส่วนของโค้ดที่ถูกเรียกใช้บ่อยจนส่งผลต่อเวลาทำงาน |
-| cold call site | จุดเรียกใช้แบบเย็น (cold call site) | จุดเรียกใช้ที่แทบไม่ถูกเรียก |
+| optimization | การเพิ่มประสิทธิภาพ / การปรับปรุงประสิทธิภาพ (optimization) | ในรูปกริยา "optimize" แปลว่า "เพิ่มประสิทธิภาพ" หรือ "ปรับปรุงประสิทธิภาพ" |
+| hot code / hot path | โค้ด/เส้นทางที่ทำงานหนัก หรือถูกเรียกใช้บ่อย (hot code / hot path) | บริบททั่วไปอาจใช้ "โค้ดส่วนที่ทำงานหนัก" หรือทับศัพท์ "hot code / hot path" เพื่อความลื่นไหล |
+| cold call site | จุดเรียกใช้ที่ไม่ค่อยถูกเรียก (cold call site) | หลีกเลี่ยง "จุดเรียกใช้แบบเย็น" เพราะขัดกับธรรมชาติภาษาไทย |
 | benchmarking | การทำเบนช์มาร์ก (benchmarking) | การเปรียบเทียบและวัดประสิทธิภาพของโปรแกรม |
 | benchmark | เบนช์มาร์ก (benchmark) | คง `cargo bench` ในโค้ด |
-| workload | เวิร์กโหลด (workload) | ภาระงานที่ใช้วัดประสิทธิภาพ |
-| metric | เมตริก (metric) | ตัวชี้วัด เช่น เวลา จำนวนคำสั่ง จำนวนไซเคิล |
-| wall-time | เวลาตามนาฬิกาจริง (wall-time) | เวลาที่ผ่านไปจริง ซึ่งผู้ใช้รับรู้ได้ |
-| profiling | การโปรไฟล์ (profiling) | การเก็บข้อมูลพฤติกรรมการทำงานของโปรแกรม |
-| profiler | โปรไฟเลอร์ (profiler) | เครื่องมือโปรไฟล์ |
-| sampling profiler | โปรไฟเลอร์แบบสุ่มตัวอย่าง (sampling profiler) | |
-| flame graph | เฟลมกราฟ (flame graph) | กราฟแสดงลำดับการเรียกใช้ฟังก์ชัน |
-| ad hoc profiling | การโปรไฟล์เฉพาะกิจ (ad hoc profiling) | |
+| workload | เวิร์กโหลด (workload) | ปริมาณหรือลักษณะงานที่ใช้วัดประสิทธิภาพ |
+| metric | เมตริก / ตัวชี้วัด (metric) | เช่น เวลา, จำนวนคำสั่ง (instructions), จำนวนรอบสัญญาณนาฬิกา (cycles) |
+| wall-time | เวลาจริงที่ผ่านไป / เวลาตามนาฬิกาจริง (wall-time) | เวลาที่มนุษย์รับรู้ได้จริง |
+| profiling | การโปรไฟล์ (profiling) | การเก็บข้อมูลพฤติกรรมการทำงานของโปรแกรมขณะรัน |
+| profiler | โปรไฟเลอร์ (profiler) | เครื่องมือวัดและวิเคราะห์ประสิทธิภาพ |
+| sampling profiler | โปรไฟเลอร์แบบสุ่มตรวจตัวอย่าง (sampling profiler) | |
+| flame graph | เฟลมกราฟ (flame graph) | กราฟแสดงสแตกระดับความลึกและสัดส่วนเวลาการเรียกใช้ฟังก์ชัน |
+| ad hoc profiling | การโปรไฟล์เฉพาะจุด / การวัดผลเฉพาะหน้า (ad hoc profiling) | |
+| harness | ฮาร์เนส / เฟรมเวิร์กควบคุมการทดสอบ (harness) | เช่น benchmarking harness |
+| stress test | การทดสอบรับโหลดสูง / สเตรสเทสต์ (stress test) | หลีกเลี่ยง "การทดสอบความเครียด" |
 | build configuration | การตั้งค่าการบิลด์ (build configuration) | |
-| dev build | บิลด์แบบเดฟ (dev build) | บิลด์เริ่มต้นที่ยังไม่ผ่านการเพิ่มประสิทธิภาพ |
-| release build | บิลด์แบบรีลีส (release build) | บิลด์ที่ผ่านการเพิ่มประสิทธิภาพแล้ว |
-| codegen unit | หน่วยโค้ดเจน (codegen unit) | |
-| link-time optimization (LTO) | การเพิ่มประสิทธิภาพตอนลิงก์ (link-time optimization; LTO) | |
-| profile-guided optimization (PGO) | การเพิ่มประสิทธิภาพโดยใช้ข้อมูลโปรไฟล์ (profile-guided optimization; PGO) | |
-| linker | ตัวลิงก์ (linker) | |
-| allocator | อัลโลเคเตอร์ (allocator) | ตัวจัดสรรหน่วยความจำ |
+| dev build | บิลด์สำหรับพัฒนา / dev build | บิลด์เริ่มต้นที่เน้นคอมไพล์เร็วและดีบักง่าย ยังไม่ผ่านการ optimize |
+| release build | บิลด์สำหรับใช้งานจริง / release build | บิลด์ที่เปิดการ optimize เต็มรูปแบบเพื่อประสิทธิภาพสูงสุด |
+| codegen unit | หน่วยสร้างโค้ด (codegen unit) | |
+| link-time optimization (LTO) | การเพิ่มประสิทธิภาพในขั้นตอนลิงก์ (Link-Time Optimization; LTO) | |
+| profile-guided optimization (PGO) | การเพิ่มประสิทธิภาพโดยอิงข้อมูลโปรไฟล์ (Profile-Guided Optimization; PGO) | |
+| linker | ตัวลิงก์ / ลิงเกอร์ (linker) | |
+| allocator | อัลโลเคเตอร์ / ตัวจัดสรรหน่วยความจำ (allocator) | |
 | heap allocation | การจัดสรรหน่วยความจำบนฮีป (heap allocation) | |
 | stack / heap | สแตก / ฮีป (stack / heap) | |
 | bounds check | การตรวจสอบขอบเขต (bounds check) | การตรวจสอบดัชนีให้อยู่ในช่วงของคอนเทนเนอร์ |
@@ -34,59 +36,65 @@
 | hashing / hash | การแฮช / แฮช (hashing / hash) | |
 | hasher | ตัวแฮช (hasher) | |
 | hash table | ตารางแฮช (hash table) | |
-| collision | การชนกัน (collision) | คีย์ต่างกันแต่ได้ค่าแฮชซ้ำกัน |
-| newtype | นิวไทป์ (newtype) | struct ที่ห่อค่าหนึ่งค่าไว้ |
+| collision | การชนกันของแฮช (collision) | คีย์ต่างกันแต่ได้ค่าแฮชซ้ำกัน |
+| newtype | นิวไทป์ (newtype) | รูปแบบ struct ที่ห่อหุ้มค่าเพียงค่าเดียวไว้เพื่อความปลอดภัยของชนิดข้อมูล |
 | iterator | อิเทอเรเตอร์ (iterator) | |
-| closure | โคลเชอร์ (closure) | |
+| closure | โคลเชอร์ (closure) | ฟังก์ชันนิรนามที่จับตัวแปรจากสภาพแวดล้อมรอบข้างได้ |
 | trait | เทรต (trait) | |
 | crate | เครต (crate) | |
 | macro | มาโคร (macro) | |
 | generic | เจเนอริก (generic) | |
 | enum / struct | enum / struct (คงชื่อเดิม) | คำสงวนของภาษา Rust |
-| variant | วาเรียนต์ (variant) | |
-| field | ฟิลด์ (field) | |
-| inlining | การอินไลน์ (inlining) | การฝังเนื้อหาฟังก์ชันเข้าไปในจุดเรียกใช้ |
-| outlining | การเอาต์ไลน์ (outlining) | การย้ายโค้ดที่แทบไม่ถูกเรียกออกไปเป็นฟังก์ชันแยก |
-| call site | จุดเรียกใช้ (call site) | |
-| lint | ลินต์ (lint) | คำเตือนจากเครื่องมือวิเคราะห์โค้ด |
-| linting | การใช้ลินต์ (linting) | |
-| assertion | แอสเซอร์ชัน (assertion) | |
-| panic | การแพนิก (panic) | |
-| abort | การยกเลิกทันที (abort) | |
-| unwinding | การคลายสแตก (unwinding) | |
-| backtrace | แบ็กเทรซ (backtrace) | |
-| debug info | ข้อมูลดีบัก (debug info) | |
-| frame pointer | เฟรมพอยเตอร์ (frame pointer) | |
-| symbol mangling / demangling | การเข้ารหัสชื่อสัญลักษณ์ / การถอดรหัสชื่อสัญลักษณ์ (symbol mangling / demangling) | |
-| wrapper type | ชนิดข้อมูลตัวหุ้ม (wrapper type) | |
-| reference count | ตัวนับการอ้างอิง (reference count) | |
-| clone | โคลน (clone) | |
+| variant | วาเรียนต์ (variant) | รูปแบบย่อยของ enum |
+| field | ฟิลด์ (field) | ข้อมูลสมาชิกใน struct หรือ enum |
+| inlining | การอินไลน์ (inlining) | การนำเนื้อหาฟังก์ชันมาใส่แทนที่จุดเรียกใช้โดยตรง |
+| outlining | การเอาต์ไลน์ (outlining) | การย้ายโค้ดส่วนที่แทบไม่ถูกเรียกออกไปเป็นฟังก์ชันแยก |
+| call site | จุดเรียกใช้ (call site) | ตำแหน่งในโค้ดที่มีการเรียกฟังก์ชัน |
+| lint | ลินต์ (lint) | ข้อแนะนำ/คำเตือนจากเครื่องมือวิเคราะห์โค้ด |
+| linting | การตรวจสอบโค้ดด้วยลินต์ (linting) | |
+| assertion | แอสเซอร์ชัน (assertion) | ข้อความยืนยันความถูกต้องของเงื่อนไข |
+| panic | การแพนิก (panic) | การหยุดทำงานเมื่อเกิดข้อผิดพลาดร้ายแรง |
+| abort | การยกเลิกการทำงานทันที (abort) | ยุติโปรแกรมทันทีโดยไม่คลายสแตก |
+| unwinding | การคลายสแตก (unwinding) | กระบวนการเคลียร์ทรัพยากรบนสแตกย้อนกลับเมื่อเกิด panic |
+| backtrace | แบ็กเทรซ (backtrace) | ประวัติลำดับสแตกของการเรียกใช้ฟังก์ชันก่อนเกิดข้อผิดพลาด |
+| debug info | ข้อมูลสำหรับดีบัก (debug info) | ข้อมูลที่คอมไพเลอร์แนบไว้เพื่อช่วยให้โปรแกรมดีบักเกอร์จับคู่กับโค้ดต้นฉบับได้ |
+| frame pointer | เฟรมพอยเตอร์ (frame pointer) | พอยน์เตอร์ชี้ตำแหน่งสแตกเฟรม |
+| symbol mangling / demangling | การแปลงชื่อสัญลักษณ์ / การถอดรหัสชื่อสัญลักษณ์ (symbol mangling / demangling) | |
+| wrapper type | ชนิดข้อมูลตัวห่อหุ้ม (wrapper type) | เช่น `Box`, `Rc`, `Arc`, `Mutex` |
+| indirection | การอ้างอิงทางอ้อม (indirection) | เช่น การเข้าถึงข้อมูลผ่านพอยน์เตอร์หลายชั้น |
+| code bloat | โค้ดบวม / ขนาดไฟล์บวม (code bloat) | ขนาดไบนารีที่ใหญ่ขึ้นจนส่งผลเสียต่อแคชคำสั่ง |
+| monomorphization | การทำโมโนมอร์ฟิซึม (monomorphization) | การที่คอมไพเลอร์แตกฟังก์ชันเจเนอริกออกมาเป็นฟังก์ชันเฉพาะสำหรับแต่ละชนิดข้อมูล |
+| reference count | ตัวนับการอ้างอิง (reference count) | เช่น ใน `Rc` และ `Arc` |
+| clone | โคลน / การคัดลอก (clone) | |
 | lock / locking | ล็อก / การล็อก (lock / locking) | |
-| buffering | การบัฟเฟอร์ (buffering) | |
+| buffering | การบัฟเฟอร์ (buffering) | การพักข้อมูลในหน่วยความจำเพื่อลดจำนวน system calls |
+| system call | ซิสเต็มคอล (system call) | การร้องขอการทำงานจากเคอร์เนลของระบบปฏิบัติการ |
 | thread | เธรด (thread) | |
 | parallelism | การประมวลผลแบบขนาน (parallelism) | |
 | SIMD | SIMD (คงไว้) | Single Instruction Multiple Data |
-| vectorization | การทำเวกเตอร์ไรเซชัน (vectorization) | |
-| cache miss | แคชพลาด (cache miss) | |
-| branch misprediction | การทำนายทิศทางผิดพลาด (branch misprediction) | |
-| memory traffic | ปริมาณการเข้าถึงหน่วยความจำ (memory traffic) | |
-| padding | แพดดิง (padding) | ไบต์ว่างที่เติมเพื่อจัดแนว |
-| alignment | การจัดแนว (alignment) | |
-| discriminant | ดิสคริมิแนนต์ (discriminant) | ค่าที่ระบุวาเรียนต์ของ enum |
-| layout | เลย์เอาต์ (layout) | การจัดวางข้อมูลในหน่วยความจำ |
+| vectorization | การทำเวกเตอร์ไรเซชัน (vectorization) | การแปลงคำสั่งให้ประมวลผลข้อมูลหลายชิ้นพร้อมกันด้วย SIMD |
+| cache miss | แคชมิส / ค้นในแคชไม่พบ (cache miss) | หลีกเลี่ยง "แคชพลาด" |
+| branch misprediction | การทำนายทิศทางสาขาคำสั่งผิดพลาด (branch misprediction) | |
+| memory traffic | ปริมาณการรับส่งข้อมูลในหน่วยความจำ (memory traffic) | |
+| padding | ช่องว่างจัดแนว / แพดดิง (padding) | ไบต์ว่างที่เติมเพื่อให้แอดเดรสตรงตามแนวการจัดวาง |
+| alignment | การจัดแนวหน่วยความจำ (alignment) | |
+| discriminant | ค่าจำแนกวาเรียนต์ (discriminant) | แท็กระบุวาเรียนต์ของ enum ในหน่วยความจำ |
+| layout | เลย์เอาต์ / การจัดวางในหน่วยความจำ (layout) | |
 | boxed slice | บ็อกซ์สไลซ์ (boxed slice) | `Box<[T]>` |
-| overhead | โอเวอร์เฮด (overhead) | ต้นทุนที่แฝงมากับการทำงาน |
-| trade-off | ข้อแลกเปลี่ยน (trade-off) | |
-| regression | การถดถอยของประสิทธิภาพ (regression) | ค่าที่เคยดีกลับแย่ลงโดยไม่ตั้งใจ |
-| binary size | ขนาดไบนารี (binary size) | |
-| cross-crate | ข้ามเครต (cross-crate) | |
+| overhead | โอเวอร์เฮด / ต้นทุนแฝง (overhead) | ภาระหรือเวลาทำงานเพิ่มเติมที่เกิดจากกลไกบางอย่าง |
+| trade-off | ข้อแลกเปลี่ยน / การชั่งน้ำหนักได้อย่างเสียอย่าง (trade-off) | |
+| regression | ประสิทธิภาพถดถอย (regression) | ประสิทธิภาพที่เคยดีกลับแย่ลงหลังมีการเปลี่ยนแปลงโค้ด |
+| binary size | ขนาดไบนารี (binary size) | ขนาดไฟล์โปรแกรมที่คอมไพล์แล้ว |
+| cross-crate | ข้ามเครต (cross-crate) | การทำงานหรืออินไลน์ฟังก์ชันระหว่างเครตต่างกัน |
 | output file | ไฟล์ผลลัพธ์ | |
 
-## หลักการทั่วไป
+## หลักการแปลและการปรับสำนวน
 
-- **ชื่อทางเทคนิค**: ชื่อเครื่องมือ คำสั่ง CLI ตัวเลือก (flag) ชื่อเครต/เทรต/ฟังก์ชัน/ชนิดข้อมูล ชื่อไฟล์ และ URL **ไม่แปล** เช่น `Cargo.toml`, `Vec`, `#[inline(always)]`, `-C target-cpu=native`, `cargo build --release`
-- **โค้ดทุกบล็อก (` ```...``` `)**: ต้องคงไว้ตามต้นฉบับภาษาอังกฤษทุกตัวอักษร (byte-identical) รวมถึงคอมเมนต์ การเว้นวรรค และแท็กภาษา (เช่น `rust`, `toml`, `text`, `bash`) ภายในบล็อก
-- **ลิงก์ (Links)**: ทั้ง inline links และ reference links ต้องชี้ไปยัง target เดิมเสมอ เพื่อให้ mdbook build ผ่านและไม่เกิด broken links
-- **หัวข้อ (Headings)**: แปลเป็นไทยอย่างเป็นธรรมชาติและกระชับ โดยคงจำนวน ระดับ และลำดับของหัวข้อให้ตรงกับต้นฉบับทุกประการ
-- **Anchor ของลิงก์ภายในเล่ม**: ตรวจสอบกับ HTML ที่ mdbook ทำการ build แล้วเสมอ โดย mdbook จะตัดสระ/วรรณยุกต์ไทยออกจาก slug อัตโนมัติ จึงต้องตรวจสอบด้วย `scripts/check-links.ps1` ทุกครั้ง
-- **รูปประโยค**: ใช้คำว่า "คุณ" แทนผู้อ่าน หลีกเลี่ยงสรรพนามซ้ำซ้อน และคงโทนกึ่งทางการแบบเอกสารเทคนิค
+1. **ชื่อทางเทคนิคเฉพาะทาง**: ชื่อเครื่องมือ คำสั่ง CLI ตัวเลือก (flag) ชื่อเครต/เทรต/ฟังก์ชัน/ชนิดข้อมูล ชื่อไฟล์ และ URL **ต้องคงเดิมเสมอ** เช่น `Cargo.toml`, `Vec`, `#[inline(always)]`, `-C target-cpu=native`, `cargo build --release`
+2. **บล็อกโค้ดทุกบล็อก (` ```...``` `)**: ต้องคงไว้ตามต้นฉบับภาษาอังกฤษทุกตัวอักษร (byte-identical) รวมถึงคอมเมนต์ ช่องว่าง และแท็กภาษา เพื่อให้สคริปต์ `verify-translation.ps1` ผ่าน 100%
+3. **ลิงก์ (Links)**: ทั้ง inline links และ reference links ต้องชี้ไปยัง target เดิมเสมอ ไม่แก้ URL ภายนอก และรักษา anchor ภายในเล่มให้สอดคล้องกับหัวข้อ
+4. **หัวข้อ (Headings)**: รักษาระดับหัวข้อ (`#`, `##`, `###`) และข้อความหัวข้อตามที่เชื่อมโยงไว้เดิม เพื่อป้องกันปัญหา broken links
+5. **โครงสร้างประโยคภาษาไทยที่ลื่นไหล**:
+   - หลีกเลี่ยงการแปลแบบคำต่อคำ (translationese) เช่น การใส่ "ของมัน", "สิ่งนี้", "พึงปรารถนา", "คิดเป็นสัดส่วนที่ไม่น้อย"
+   - ปรับเป็นสำนวนที่กระชับ ตรงประเด็น เป็นธรรมชาติสำหรับโปรแกรมเมอร์ไทย
+   - ใช้คำว่า "คุณ" หรือละประธานในประโยคที่สื่อถึงผู้อ่านได้อย่างชัดเจน โดยคงโทนกึ่งทางการแบบเอกสารวิชาการ/คู่มือเทคนิคสากล
