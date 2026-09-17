@@ -83,7 +83,7 @@ out.flush()?;
 
 [ส่วนนี้]อธิบายวิธีหลีกเลี่ยงการจัดสรรหน่วยความจำมากเกินไปเมื่อใช้ [`BufRead`] อ่านไฟล์ทีละบรรทัด
 
-[ส่วนนี้]: heap-allocations.md#การอานไฟลทละบรรทด
+[ส่วนนี้]: heap-allocations.md#การอานไฟลทีละบรรทัด
 [`BufRead`]: https://doc.rust-lang.org/std/io/trait.BufRead.html
 
 ## การอ่านอินพุตเป็นไบต์ดิบ
